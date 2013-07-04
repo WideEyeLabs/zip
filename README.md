@@ -25,8 +25,7 @@ application that has already been downloaded (not using the `source`
 parameter), copy it to the appropriate location. You can find out what
 directory this is with the following command on the node to run chef:
 
-    knife exec -E 'p Chef::Config[:file_cache_path]' -c
-/etc/chef/client.rb
+    knife exec -E 'p Chef::Config[:file_cache_path]' -c /etc/chef/client.rb
 
 # Actions:
 
@@ -52,10 +51,8 @@ Usage Examples
 Install `/Applications/SizeUp.app` from the primary download site.
 
     zip_package "SizeUp" do
-      source
-"http://www.irradiatedsoftware.com/downloads/?file=SizeUp.zip"
-      checksum
-"8eee88fbe6cfc9b298c6c0e44092549d595306d29466320b8237b3ea88e70395"
+      source "http://www.irradiatedsoftware.com/downloads/?file=SizeUp.zip"
+      checksum "8eee88fbe6cfc9b298c6c0e44092549d595306d29466320b8237b3ea88e70395"
       action :install
     end
 
