@@ -42,7 +42,7 @@ private
       block do
         system "unzip #{passphrase_cmd} -d '#{cache_dir}' '#{file}'"
       end
-      not_if ::File.exists("#{cache_dir}/#{@new_resource.app}.app")
+      not_if ::File.exists?("#{cache_dir}/#{@new_resource.app}.app")
     end
   end
 
