@@ -1,5 +1,4 @@
 actions :install
-default_action :install
 
 attribute :app, :kind_of => String, :name_attribute => true
 attribute :source, :kind_of => String, :default => nil
