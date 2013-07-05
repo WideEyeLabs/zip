@@ -29,7 +29,7 @@ private
 
   def download_file(file, name)
     remote_file "#{file} - #{name}" do
-      path zip_file
+      path file
       source @new_resource.source
       checksum @new_resource.checksum if @new_resource.checksum
       only_if { @new_resource.source }
