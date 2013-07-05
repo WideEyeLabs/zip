@@ -27,11 +27,8 @@ action :install do
       not_if ::File.exists("#{cache_dir}/#{new_resource.app}.app")
     end
 
-    case new_resource.type
-    when "app"
-      execute "cp -R '#{cache_dir}/#{new_resource.app}.app' '#{new_resource.destination}'" do
-        user new_resource.owner if new_resource.owner
-      end
+    execute "cp -R '#{cache_dir}/#{new_resource.app}.app' '#{new_resource.destination}'" do
+      user new_resource.owner if new_resource.owner
     end
   end
 end
